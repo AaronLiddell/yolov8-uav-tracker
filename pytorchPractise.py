@@ -20,10 +20,19 @@ print(tensor_element_mult)
 
 linear_layer = nn.Linear(5, 2, 1) 
 #(number of inputs, number of outputs, True(1)/False(0) to include bias)
-#currently weight matrix is random so output in meaningless
+#currently weight matrix and bias is random so output in meaningless
 #input (5 numbers) x weight matrix (5x2) + bias (2 numbers) = output (2 numbers)
 
 result = linear_layer(tensor)
 print(f"Result: {result}")
 
+sequential_layers = nn.Sequential(
+    nn.Linear(5,10),
+    nn.Linear(10,3),
+    nn.Linear(3,2)    
+)
 
+sequential_result = sequential_layers(tensor)
+print(f"sequential result is: {sequential_result}")
+
+print(f"Number of learnable params: {torch.numel(sequential_result)}")
