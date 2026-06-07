@@ -1,3 +1,7 @@
-print("Hello, World!")
+import torch
 
-print("next test")
+data = [1, 2, 3, 4, 5]
+tensor = torch.tensor(data)
+print(tensor)
+
+
