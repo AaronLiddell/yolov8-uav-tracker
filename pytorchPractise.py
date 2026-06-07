@@ -35,4 +35,6 @@ sequential_layers = nn.Sequential(
 sequential_result = sequential_layers(tensor)
 print(f"sequential result is: {sequential_result}")
 
-print(f"Number of learnable params: {torch.numel(sequential_result)}")
+
+total_params = sum(torch.numel(p) for p in sequential_layers.parameters())
+print(f"Number of learnable params: {total_params}")
