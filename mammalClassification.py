@@ -48,3 +48,14 @@ for epoch in range(num_epoch):
 
 output = model(input_tensor)
 print(f"Output:{output}")
+
+#for i in len(output):
+ #   if output[i] >= 0.5:
+  #      print(f"Animal {i} is a mammal")
+   # else:
+    #    print(f"Animal {i} is not a mammal")
+
+unknown_input = [0, 1, 0]
+whale_tensor = torch.tensor(unknown_input, dtype=torch.float32)
+whale = model(whale_tensor)
+print(whale)
