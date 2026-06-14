@@ -55,7 +55,13 @@ print(f"Output:{output}")
    # else:
     #    print(f"Animal {i} is not a mammal")
 
-unknown_input = [0, 1, 0]
-whale_tensor = torch.tensor(unknown_input, dtype=torch.float32)
-whale = model(whale_tensor)
-print(whale)
+unknown_input = [4, 1, 0]
+unknown_tensor = torch.tensor(unknown_input, dtype=torch.float32)
+unknown_output = model(unknown_tensor)
+print(unknown_output)
+
+animal_class_num = unknown_output[0].item()
+if animal_class_num > 0.5:
+    print(f"Animal is a mammal")
+else:
+    print(f"Animal is NOT a mammal")
