@@ -3,7 +3,7 @@ import torch.nn as nn
 import numpy as np
 import torch.optim as optim
 
-num_epoch = 1000
+num_epoch = 5000
 
 #get and separate data
 #data listed as [no. legs], [eggs?], [hair?], [feathers?], [scales?], [label]
@@ -34,5 +34,6 @@ for epoch in range(num_epoch):
 
     print(f"loss: {loss}")
 
-output = model(training_tensor)
-print(output)
+#output = model(training_tensor)
+
+torch.save(model.state_dict(), "animal_model.pth") #saves the learned weights (not the model architecture)

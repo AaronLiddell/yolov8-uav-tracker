@@ -45,9 +45,6 @@ for epoch in range(num_epoch):
     optimizer.step()
 
 
-
-#output = model(input_tensor)
-
 torch.save(model.state_dict(), "mammal_model.pth") #saves the learned weights (not the model architecture)
 
 
