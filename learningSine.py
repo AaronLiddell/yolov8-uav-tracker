@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 epochs = 5000
 
-x = np.linspace(0, 4 * np.pi, 1000)
+x = np.linspace(0, 2 * np.pi, 4000)
 y = np.sin(x)
 
 x_tensor = torch.tensor(x).float().reshape(-1, 1)
@@ -14,7 +14,7 @@ y_tensor = torch.tensor(y).float().reshape(-1, 1)
 
 model = nn.Sequential(
     nn.Linear(1, 32),
-    nn.ReLU(),
+    nn.LeakyReLU(negative_slope=0.05),
     nn.Linear(32, 64),
     nn.ReLU(),
     nn.Linear(64, 1)
@@ -22,7 +22,7 @@ model = nn.Sequential(
 
 criterion = nn.MSELoss()
 
-optimizer = optim.SGD(model.parameters(), lr=0.01)
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
 for i in range(epochs):
     optimizer.zero_grad()
