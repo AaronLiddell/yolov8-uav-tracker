@@ -2,14 +2,15 @@ import torch
 import torch.nn as nn
 import numpy as np
 import torch.optim as optim
+import matplotlib.pyplot as plt
 
-epochs = 1000
+epochs = 5000
 
 x = np.linspace(0, 4 * np.pi, 1000)
 y = np.sin(x)
 
-x_tensor = torch.tensor(x).reshape(-1, 1)
-y_tensor = torch.tensor(y).reshape(-1, 1)
+x_tensor = torch.tensor(x).float().reshape(-1, 1)
+y_tensor = torch.tensor(y).float().reshape(-1, 1)
 
 model = nn.Sequential(
     nn.Linear(1, 32),
@@ -31,3 +32,13 @@ for i in range(epochs):
     optimizer.step()
 
     print(f"loss: {loss}")
+
+np_pred = pred.detach().numpy()    
+
+plt.plot(x, y, label="True sine")
+plt.plot(x, np_pred, label="Learned sine")
+plt.legend()
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.title("Learning sine")
+plt.show()
