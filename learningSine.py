@@ -22,7 +22,7 @@ model = nn.Sequential(
 
 criterion = nn.MSELoss()
 
-optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.97)
 
 for i in range(epochs):
     optimizer.zero_grad()
