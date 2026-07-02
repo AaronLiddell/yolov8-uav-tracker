@@ -4,6 +4,8 @@ import torch.optim as optim
 import numpy as np
 
 from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+import torch.optim as optim
 
 import matplotlib.pyplot as plt
 
@@ -36,4 +38,35 @@ class Softmax(nn.Module): #nn.Module is the base class for all neural network mo
     
 
 model_softmax = Softmax(784, 10)
-print(model_softmax.state_dict())
+model_softmax.state_dict()
+
+train_loader = DataLoader(train_data, batch_size=16)
+val_loader = DataLoader(val_data, batch_size=16)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(model_softmax.parameters(), lr=0.01)
+
+epochs = 200
+loss = []
+acc = []
+
+
+for epoch in range(epochs):
+    for i, (images, labels) in enumerate(train_loader):
+        optimizer.zero_grad()
+
+        #flattens each image from 2D grid to 1D vector with 28*28=784 values
+        #passes flattened image through model
+        #stores the 10 resulting classes as outputs
+        outputs = model_softmax(images.view(-1, 28*28))
+
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+    loss.append(loss.item())
+    correct = 0
+
+    for images, labels in val_loader:
+        outputs = model_softmax(images.view(-1, 28*28))
+        
