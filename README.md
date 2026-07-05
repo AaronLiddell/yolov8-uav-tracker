@@ -1,4 +1,4 @@
-# Autonomous Target Detection & Tracking System
+# Work in Progress: Autonomous Target Detection & Tracking System
 
 > A computer vision system for real-time detection and tracking of moving targets, stress-tested against degraded sensor conditions relevant to defence and autonomous systems applications (jamming, atmospheric distortion, thermal/FLIR simulation).
 
@@ -20,11 +20,11 @@ The project is structured to reflect problems relevant to current UK defence inv
 
 ## Key Features
 
-- **Object detection** — YOLOv8 (PyTorch) fine-tuned via transfer learning for target classes relevant to aerial/UAV surveillance scenarios
-- **Multi-object tracking** — persistent track IDs across frames, with a custom constant-velocity Kalman filter (implemented from first principles, not a library wrapper)
-- **Sensor dropout / jamming simulation** — burst-pattern dropout modelled on realistic electronic warfare (EW) blackout behaviour, used to evaluate track continuity, position error during coast, and recovery time
+- **Object detection** — YOLOv8 (PyTorch) fine tuned via transfer learning for target classes relevant to aerial/UAV surveillance scenarios
+- **Multi-object tracking** — persistent track IDs across frames, with a custom constant velocity Kalman filter (implemented from first principles, not a library wrapper)
+- **Sensor dropout / jamming simulation** — burst pattern dropout modelled on realistic electronic warfare (EW) blackout behaviour, used to evaluate track continuity, position error during coast, and recovery time
 - **Environmental stress testing** — atmospheric distortion (fog/smoke), Gaussian/sensor noise, and thermal (FLIR-style) imaging simulation, with benchmarked mAP degradation and mitigation filters
-- **Performance profiling** — frame-rate (FPS) and latency benchmarking with an eye toward embedded/real-time deployment constraints
+- **Performance profiling** — frame rate (FPS) and latency benchmarking with an eye toward embedded/real time deployment constraints
 
 ---
 
