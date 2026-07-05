@@ -14,7 +14,7 @@ This project implements an end-to-end target detection and tracking pipeline, bu
 
 The project is structured to reflect problems relevant to current UK defence investment priorities — particularly counter-UAS detection, sensor resilience under jamming, and GPS/sensor-denied tracking robustness.
 
-**Why this project:** I want to practically apply the machine learning principles I've learnt to a prevalent international issue. Instead of only ensuring the model functions with clean data, I ask the question "How does the result change when data is degraded, spoofed, or intermittently blacked out?". This more accurately mirrors real-world environments and allows investigation into problems faced by current systems.
+**Why this project:** I wanted to apply the machine learning principles I've learnt to a problem with real defence relevance. Instead of only asking whether the model works on clean data, I ask: what happens when that data is degraded, spoofed, or intermittently blacked out? This mirrors real-world operating conditions far more closely, and opens up genuine investigation into problems facing current tracking systems.
 
 ---
 
