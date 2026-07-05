@@ -1,0 +1,13 @@
+#CIFAR10
+#‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, ‘truck’
+
+import torch
+import torchvision
+import torchvision.transforms as transforms
+
+transform = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalise((0.5,0.5,0.5), (0.5,0.5,0.5))]
+)
+
+trainset = torchvision.datasets.CIFAR10(root="./data", train=True, download=True, transform=transform)

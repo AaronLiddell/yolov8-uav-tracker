@@ -1,0 +1,50 @@
+import torch
+import torch.nn as nn
+import numpy as np
+import torch.optim as optim
+
+num_epoch = 5000
+
+# Each row = one animal: [limbs, eggs, hair]
+data = [
+    [4, 0, 1],
+    [8, 1, 1],
+    [2, 0, 1],
+    [2, 1, 0],
+    [6, 1, 0]
+]
+
+#1 is mammal, 0 is not mammal
+label = [1, 0, 1, 0, 0]
+label = torch.tensor(label, dtype=torch.float32).unsqueeze(1) #label must be tensor shape (5,1)
+
+input_tensor = torch.tensor(data, dtype=torch.float32)
+size = input_tensor.shape
+print(f"size: {size}")
+
+model = nn.Sequential(
+    nn.Linear(3, 4),
+    nn.ReLU(),
+    nn.Linear(4, 1),
+    nn.Sigmoid()
+)
+
+criterion = nn.BCELoss() #correct loss function for binary classification
+
+#creating optimizer
+optimizer = optim.SGD(model.parameters(), lr=0.1)
+
+for epoch in range(num_epoch):
+    optimizer.zero_grad()
+
+    output = model(input_tensor) #this is a forward pass
+
+    loss = criterion(output, label)
+    print(f"loss: {loss}")
+    loss.backward()
+    optimizer.step()
+
+
+torch.save(model.state_dict(), "mammal_model.pth") #saves the learned weights (not the model architecture)
+
+
