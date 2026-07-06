@@ -126,4 +126,6 @@ This project was deliberately shaped around problems referenced in the June 2026
 
 ## Author
 
-**[Aaron Liddell]** — Final-year Physics student. [LinkedIn](www.linkedin.com/in/aaron-liddell-4ba8a21ba) ·  [Email](aaronliddell05@gmail.com)
+**[Aaron Liddell]** — Final-year Physics student at the University of Edinburgh.
+
+ [LinkedIn](https://www.linkedin.com/in/aaron-liddell-4ba8a21ba) ·  aaronliddell05@gmail.com
