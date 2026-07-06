@@ -1,5 +1,4 @@
 # Work in Progress: Autonomous Target Detection & Tracking System
-# THIS IS A TEST
 
 > A computer vision system for real-time detection and tracking of moving targets, stress-tested against degraded sensor conditions relevant to defence and autonomous systems applications (jamming, atmospheric distortion, thermal/FLIR simulation).
 
