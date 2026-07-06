@@ -50,19 +50,19 @@ The project is structured to reflect problems relevant to current UK defence inv
 
 ## Roadmap
 
-- [x] **Phase 0 — ML Foundations:** PyTorch fundamentals, OpenCV basics, working YOLOv8 inference demo
-- [ ] **Phase 1 — Data & Baseline:** Acquire and prepare dataset (VisDrone / DOTA); establish baseline detection pipeline
-- [ ] **Phase 2 — Training:** Transfer learning on YOLOv8 for target detection; baseline mAP established
-- [ ] **Phase 3 — Stress Testing:** Degraded-condition evaluation
-  - [ ] Atmospheric distortion (fog/smoke)
-  - [ ] Sensor/Gaussian noise
-  - [ ] Thermal/FLIR simulation
-  - [ ] Sensor dropout under jamming (custom Kalman filter, burst-pattern blackout, track continuity/coast error/recovery time metrics)
-  - [ ] Multi-object tracking with persistent IDs
-  - [ ] Small-object / counter-UAS evaluation
-  - [ ] Cross-domain evaluation (DOTA)
-  - [ ] Lightweight/quantized model variant
-- [ ] **Phase 4 — Production:** Code cleanup, FPS/latency profiling, live demo, final documentation
+- **Phase 0 — ML Foundations:** PyTorch fundamentals through Datacamp tutorial, OpenCV basics through image classification practise, and working YOLOv8 inference demo
+- **Phase 1 — Data & Baseline:** Acquire and prepare dataset (VisDrone / DOTA); establish baseline detection pipeline
+- **Phase 2 — Training:** Transfer learning on YOLOv8 for target detection; baseline mAP established
+- **Phase 3 — Stress Testing:** Degraded-condition evaluation
+  - Atmospheric distortion (fog/smoke)
+  - Sensor/Gaussian noise
+  - Thermal/FLIR simulation
+  - Sensor dropout under jamming (custom Kalman filter, burst-pattern blackout, track continuity/coast error/recovery time metrics)
+  - Multi-object tracking with persistent IDs
+  - Small-object / counter-UAS evaluation
+  - Cross-domain evaluation (DOTA)
+  - Lightweight/quantized model variant
+- **Phase 4 — Production:** Code cleanup, FPS/latency profiling, live demo, final documentation
 
 See [`DEVLOG.md`](DEVLOG.md) for detailed weekly progress notes.
 
@@ -121,14 +121,10 @@ python src/main.py --source path/to/video.mp4 --degrade jamming
 
 ## Relevance to Defence & GNC Applications
 
-This project was deliberately shaped around problems referenced in the UK Defence Investment Plan — particularly sensor resilience under electronic attack, counter-UAS detection, and GPS/sensor-denied tracking. The stress-testing phase (Phase 3) is intended as the primary differentiator versus a standard object-detection portfolio project.
+This project was deliberately shaped around problems referenced in the June 2026 UK Defence Investment Plan — particularly sensor resilience under electronic attack, counter-UAS detection, and GPS/sensor-denied tracking. The stress-testing phase (Phase 3) is intended as the primary differentiator versus a standard object-detection portfolio project.
 
 ---
 
 ## Author
 
-**[Your Name]** — Final-year Physics student. [LinkedIn](#) · [Portfolio](#) · [Email](#)
-
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+**[Aaron Liddell]** — Final-year Physics student. [LinkedIn](www.linkedin.com/in/aaron-liddell-4ba8a21ba) ·  [Email](aaronliddell05@gmail.com)
