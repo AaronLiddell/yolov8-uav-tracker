@@ -18,7 +18,7 @@ def CaptureVideo():
             break
 
         #operations on frame come below
-        gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        gray = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
         #display resulting frame
         cv.imshow("frame", gray)
