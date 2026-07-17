@@ -141,3 +141,7 @@ No code changes today, but this was the key planning day the rest of the project
 ## 2026-07-17 - Final CIFAR-10 Check
 - A test accuracy of roughly 62% was achieved. For the purpose of becoming familiar with the image classification pipeline, this is acceptable and this exercise is ended here.
 - Final review of the code to confirm understanding, before moving onto investigating OpenCV
+
+---
+
+## 2026-07-07 - Start of OpenCV Exposure
