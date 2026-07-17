@@ -1,6 +1,6 @@
 # DEVLOG — Autonomous Target Detection and Tracking System
 
-A running log of progress, decisions, and reasoning behind this portfolio project (YOLOv8 + PyTorch + OpenCV target detection and tracking, stress-tested against operational degradation). Entries are drawn from commit history and working sessions. Private day-to-day debugging notes live in OneNote; this file holds the polished, recruiter-facing version.
+A running log of progress, decisions, and reasoning behind this portfolio project (YOLOv8 + PyTorch + OpenCV target detection and tracking, stress-tested against operational degradation). Entries are drawn from commit history and working sessions. Private day-to-day debugging notes live in OneNote.
 
 ---
 
@@ -67,9 +67,9 @@ A running log of progress, decisions, and reasoning behind this portfolio projec
 ## 2026-06-27 — Planning Session: Roadmap, Modules, and Documentation Strategy
 No code changes today, but this was the key planning day the rest of the project builds on:
 - Finalised the four-phase project roadmap (Foundations → Transfer Learning → Operational-Degradation Stress Testing → Production Deployment), with **Phase 3 (stress testing) identified as the strongest differentiator** for defence-sector recruiters
-- Confirmed final-year academic modules: Lagrangian Dynamics, Numerical Recipes, Modelling and Visualisation, Quantum Computing, Data Acquisition and Handling, plus a TBD elective
+- Confirmed final-year academic modules: Fluid Mechanics, Numerical Recipes, Modelling and Visualisation, Quantum Computing, Data Acquisition and Handling, plus a TBD elective
 - Defined a six-step bridge plan to build ML fluency before starting the core project; confirmed **Step 1 complete** (the tensor/classifier/regression work from 6–17 June, rebuilt from memory rather than copied)
-- Decided on a hybrid documentation approach: **OneNote for private day-to-day notes, this `DEVLOG.md` for polished weekly summaries** visible to recruiters
+- Decided on a hybrid documentation approach: **OneNote for private day-to-day notes, this `DEVLOG.md` for polished summaries.**
 - Confirmed VisDrone (primary) and DOTA (cross-domain) as the datasets to use, both ITAR-compliant
 
 **Reflection:** This is where the project went from "a series of ML exercises" to an actual structured plan with a defence-recruiting angle. Worth having as a fixed reference point going forward.
@@ -85,7 +85,7 @@ No code changes today, but this was the key planning day the rest of the project
 ---
 
 ## 2026-06-30 — CIFAR-10 Added + Phase 3 Strategy Locked In
-- Commit: added CIFAR-10 starter script to the repo
+- Added CIFAR-10 starter script to the repo
 - Reviewed the UK Government's newly published Defence Investment Plan (drone transformation programme, uncrewed naval vessels, Collaborative Combat Air, loitering munitions) and mapped potential project extensions against it
 - **Selected "sensor dropout under jamming" as the first Phase 3 addition**, with the rest (multi-object tracking, counter-UAS subset, cross-domain DOTA evaluation, lightweight/quantized variant) queued for later
 - Key implementation decisions locked in:
@@ -138,6 +138,6 @@ No code changes today, but this was the key planning day the rest of the project
 
 ---
 
-## Where things stand
-
-Currently in **Phase 0 (ML Foundations)** of the four-phase roadmap — working through the bridge plan's tutorial-based steps (CIFAR-10 debugging in progress) before moving to OpenCV, a YOLOv8 inference demo, and then into Phase 1 (dataset acquisition) and the Phase 2/3 work (transfer learning, hand-rolled Kalman filter, jamming simulation) outlined above.
+## 2026-07-17 - Final CIFAR-10 Check
+- A test accuracy of roughly 62% was achieved. For the purpose of becoming familiar with the image classification pipeline, this is acceptable and this exercise is ended here.
+- Final review of the code to confirm understanding, before moving onto investigating OpenCV
