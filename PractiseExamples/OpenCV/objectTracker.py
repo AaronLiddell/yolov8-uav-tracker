@@ -18,10 +18,15 @@ def CaptureVideo():
             break
 
         #operations on frame come below
-        gray = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+        hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+
+        dark_col = np.array([233, 83, 52])
+        bright_col = np.array([222, 65, 99])
+
+        mask = cv.inRange(hsv, dark_col, bright_col)
 
         #display resulting frame
-        cv.imshow("frame", gray)
+        cv.imshow("frame", mask)
         if cv.waitKey(1) == ord("q"): #waits for q pressed to end 
             break
 
