@@ -24,7 +24,10 @@ def CaptureVideo():
         bright_col = np.array([103, 255, 255])
 
         mask = cv.inRange(hsv, dark_col, bright_col)
+        mask = erodeNoise(mask) #shrinks small patches of white noise
+
         res = cv.bitwise_and(frame, frame, mask = mask)
+
 
         #display resulting frame
         cv.imshow("frame", frame)
@@ -34,5 +37,11 @@ def CaptureVideo():
             break
 
     cap.release()
+
+def erodeNoise(mask):
+    kernel = np.ones((5,5), np.uint8)
+    erosion = cv.erode(mask, kernel, iterations=1)
+
+    return erosion
 
 CaptureVideo()

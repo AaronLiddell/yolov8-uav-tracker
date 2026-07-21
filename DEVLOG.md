@@ -146,3 +146,7 @@ No code changes today, but this was the key planning day the rest of the project
 
 ## 2026-07-07 - Start of OpenCV Exposure
 - Target: To create a program that uses a webcam to view and track an object using OpenCV. This is done using HSV (Hue Saturation and Value) thresholding, a binary mask, contouring to eliminate noise, and a bounding box drawn on the output feed.
+
+## 2026-07-21 - Object tracking experimentation
+- A test project "objectTracker.py" is created to test openCV and object tracking principles. This is done the a small blue circular lid.
+- Initailly it is not realised that OpenCV using HSV ranges [0, 179],[0, 255],[0, 255] meaning object was not tracked at all. Normalising the HSV values to meet these ranges then allowed the blue lid to be separated from its background. 
