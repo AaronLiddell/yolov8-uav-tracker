@@ -27,6 +27,9 @@ def CaptureVideo():
         mask = erodeNoise(mask) #shrinks small patches of white noise
 
         res = cv.bitwise_and(frame, frame, mask = mask)
+        
+        contouring(mask, res)
+
 
 
         #display resulting frame
@@ -43,5 +46,9 @@ def erodeNoise(mask):
     erosion = cv.erode(mask, kernel, iterations=1)
 
     return erosion
+
+def contouring(mask, res):
+    contours, hierarchy = cv.findContours(mask, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+    cv.drawContours(res, contours, 0, (0,255,0), 3) #-1 means draw all contours
 
 CaptureVideo()
