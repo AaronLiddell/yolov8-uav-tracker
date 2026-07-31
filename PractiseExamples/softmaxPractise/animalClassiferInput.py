@@ -9,11 +9,11 @@ model = nn.Sequential(
     nn.Linear(16, 3),
 )
 
-model.load_state_dict(torch.load("softmaxPractise/animal_model.pth"))
+model.load_state_dict(torch.load("PractiseExamples/softmaxPractise/animal_model.pth"))
 #model.eval()
 
 #data listed as [no. legs], [eggs?], [hair?], [feathers?], [scales?], [label]
-unknown_input = [6,1,1,0,0]
+unknown_input = [0,0,0,1,0]
 unknown_tensor = torch.tensor(unknown_input, dtype=torch.float32)
 
 unknown_output = model(unknown_tensor)

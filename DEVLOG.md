@@ -150,5 +150,9 @@ No code changes today, but this was the key planning day the rest of the project
 ## 2026-07-21 - Object tracking experimentation
 - A test project "objectTracker.py" is created to test openCV and object tracking principles. This is done the a small blue circular lid.
 - Initailly it is not realised that OpenCV using HSV ranges [0, 179],[0, 255],[0, 255] meaning object was not tracked at all. Normalising the HSV values to meet these ranges then allowed the blue lid to be separated from its background. 
-- An erosion function was added to reduce noise appearing in the edges of the video stream
+- An erosion function was added to reduce noise appearing in the edges of the video stream.
 - Contouring was explored and implemented, adding a green outline to the feed of the tracked lid.
+
+## 2026-07-31 - Generalising colour range. Improving Contouring
+- The colour input is changed so the standard format is input and values are automatically normalised.
+- 
