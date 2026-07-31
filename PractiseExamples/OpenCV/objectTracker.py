@@ -53,9 +53,9 @@ def erodeNoise(mask):
 def contouring(mask, res):
     contours, hierarchy = cv.findContours(mask, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     
-    area = cv.contourArea(0)
-    if cv.contourArea(-1) < area:
-        cv.drawContours(res, contours, 0, (0,255,0), 3) #-1 means draw all contours
+    largest = max(contours, key=cv.contourArea)
+    if cv.contourArea(largest) > 500:
+        cv.drawContours(res, [largest], -1, (0,255,0), 3)
 
 
 CaptureVideo()
