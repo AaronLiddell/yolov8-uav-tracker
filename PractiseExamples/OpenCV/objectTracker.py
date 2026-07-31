@@ -59,8 +59,12 @@ def contouring(mask, res):
 
     #Rotating bounding box
     rect = cv.minAreaRect(largest)
-    box = cv.boxPoints(rect)
-    box = np.int32(box)
+    #find min area rectangle that encloses all points in the contour
+    #returns (centre coords, (width,height), angle of rotation)
+
+    box = cv.boxPoints(rect) #returns four corners of the rectangle
+    box = np.int32(box) #coords must be integers to draw onto an image
+    cv.putText(res, "Bounding box", (int(rect[0][0]), int(rect[0][1])), cv.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,255), 2, cv.LINE_AA)
     cv.drawContours(res, [box], 0, (0,0,255), 2)
 
 CaptureVideo()
