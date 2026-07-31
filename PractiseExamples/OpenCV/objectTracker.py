@@ -57,5 +57,10 @@ def contouring(mask, res):
     if cv.contourArea(largest) > 500:
         cv.drawContours(res, [largest], -1, (0,255,0), 3)
 
+    #Rotating bounding box
+    rect = cv.minAreaRect(largest)
+    box = cv.boxPoints(rect)
+    box = np.int32(box)
+    cv.drawContours(res, [box], 0, (0,0,255), 2)
 
 CaptureVideo()
