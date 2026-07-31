@@ -156,4 +156,4 @@ No code changes today, but this was the key planning day the rest of the project
 ## 2026-07-31 - Generalising colour range. Improving Contouring
 - The colour input is changed so the standard format is input and values are automatically normalised.
 - Filtered out all but the largest contour. 
-- Added a rotatable bounding box around the largest contour. Labelled the box ![bounding box label](image.png)
+- Added a rotatable bounding box around the largest contour. Labelled the box ![bounding box label](images/boundingBox.png)
