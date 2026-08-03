@@ -44,5 +44,6 @@ def CaptureVideo():
 
 def vertRectangle(frame,x1,y1,x2,y2):
     cv.rectangle(frame, (x1,y1), (x2,y2), (0,255,0), 2)
+    
 
 CaptureVideo()

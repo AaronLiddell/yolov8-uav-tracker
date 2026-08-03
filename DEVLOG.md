@@ -164,3 +164,4 @@ No code changes today, but this was the key planning day the rest of the project
 - First ensure YOLO works by inputting image of a car and checking it is successfully recognised.
 - Next use the OpenCV principles developed in the previous step to access laptop webcam and live track and recognise objects from the video stream.
 - The output video was not initally smooth and consisted of a new windows being produced every frame. A fix was found when it was realised that two video streams were fighting for one window. One window was removed.
+- Switched from built in Ultralytics tracking and boxing to the already developed OpenCV based tracking and boxing. This completes the OpenCV first exposure and testing.
