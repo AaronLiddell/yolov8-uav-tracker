@@ -156,4 +156,11 @@ No code changes today, but this was the key planning day the rest of the project
 ## 2026-07-31 - Generalising colour range. Improving Contouring
 - The colour input is changed so the standard format is input and values are automatically normalised.
 - Filtered out all but the largest contour. 
-- Added a rotatable bounding box around the largest contour. Labelled the box ![bounding box label](images/boundingBox.png)
+- Added a rotatable bounding box around the largest contour. Labelled the box. Completed OpenCV inital exposure. ![bounding box label](images/boundingBox.png)
+
+---
+
+## 2026-08-03 - YOLOv8 Learning and Webcam Testing
+- First ensure YOLO works by inputting image of a car and checking it is successfully recognised.
+- Next use the OpenCV principles developed in the previous step to access laptop webcam and live track and recognise objects from the video stream.
+- The output video was not initally smooth and consisted of a new windows being produced every frame. A fix was found when it was realised that two video streams were fighting for one window. One window was removed.

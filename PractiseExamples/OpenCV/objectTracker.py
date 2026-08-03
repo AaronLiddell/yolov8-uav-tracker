@@ -20,11 +20,11 @@ def CaptureVideo():
         #operations on frame come below
         hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
-        hsv_unnorm = np.array([200, 11, 78])
+        hsv_unnorm = np.array([200, 100, 93])
         hsv_norm = (hsv_unnorm[0]/360 * 179), (hsv_unnorm[1]/100 * 255), (hsv_unnorm[2]/100 * 255)
 
-        dark_col = hsv_norm - np.array((10, 100, 100))
-        bright_col = hsv_norm + np.array((10, 100, 100))
+        dark_col = hsv_norm - np.array((10, 99, 80))
+        bright_col = hsv_norm + np.array((10, 99, 80))
 
         mask = cv.inRange(hsv, dark_col, bright_col)
         mask = erodeNoise(mask) #shrinks small patches of white noise
@@ -52,6 +52,9 @@ def erodeNoise(mask):
 
 def contouring(mask, res):
     contours, hierarchy = cv.findContours(mask, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+
+    if not contours:
+        return
     
     largest = max(contours, key=cv.contourArea)
     if cv.contourArea(largest) > 500:
