@@ -3,7 +3,7 @@ import cv2 as cv
 import numpy as np
 
 
-model = YOLO("yolov8n.pt")   #nano model, auto downloads 
+model = YOLO("PractiseExamples/YOLOv8/yolov8n.pt")   #nano model, auto downloads 
 #results = model("images/yoloTest.jpg", show=True, save=True)
 #print(results[0].boxes)
 
