@@ -164,4 +164,9 @@ No code changes today, but this was the key planning day the rest of the project
 - First ensure YOLO works by inputting image of a car and checking it is successfully recognised.
 - Next use the OpenCV principles developed in the previous step to access laptop webcam and live track and recognise objects from the video stream.
 - The output video was not initally smooth and consisted of a new windows being produced every frame. A fix was found when it was realised that two video streams were fighting for one window. One window was removed.
-- Switched from built in Ultralytics tracking and boxing to the already developed OpenCV based tracking and boxing. This completes the OpenCV first exposure and testing.
+- Switched from built in Ultralytics tracking and boxing to the already developed OpenCV based tracking and boxing. This completes the YOLOv8 first exposure and testing.
+
+---
+
+## 2026-08-04 - Phase 1: Foundations
+- Deciding on a dataset to use was a decision between VisDrone consisting of aerial drone footage focusing on people and ground vehicles, and DOTA conisting of satellite imagery of vehicles, aircraft, and buildings. The important distinction is that VisDrone includes video data to train and test on. This makes it an easy first choice, as video analysis opens the door for evaluating artifacts such as track continuity and recovery time after dropout.
