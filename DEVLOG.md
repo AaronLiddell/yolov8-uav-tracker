@@ -4,6 +4,8 @@ A running log of progress, decisions, and reasoning behind this portfolio projec
 
 ---
 
+# Phase 0: Fundamentals
+
 ## 2026-06-06 — Environment Setup
 - Initial repo commit and basic script sanity-testing (`test.py`)
 - A few iterations reverting/re-adding test code while getting the local environment and git workflow working
@@ -168,5 +170,13 @@ No code changes today, but this was the key planning day the rest of the project
 
 ---
 
-## 2026-08-04 - Phase 1: Foundations
+# Phase 1: Project Preparations
+
+## 2026-08-04 - Foundations
 - Deciding on a dataset to use was a decision between VisDrone consisting of aerial drone footage focusing on people and ground vehicles, and DOTA conisting of satellite imagery of vehicles, aircraft, and buildings. The important distinction is that VisDrone includes video data to train and test on. This makes it an easy first choice, as video analysis opens the door for evaluating artifacts such as track continuity and recovery time after dropout.
+- Training will be done on VisDrone static images. This is done because sequential images have large varieties in altitude, content and lighting. This means fewer images are needed to train a successful and thourough model. Test images will then be used that the model hasnt seen before, followed by video clips.
+
+---
+
+## 2026-08-05 - Training Data
+- Downloaded training data from https://github.com/VisDrone/VisDrone-Dataset and extracted zip file.
